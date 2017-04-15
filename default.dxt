@@ -1,23 +1,32 @@
 + [*] (hi|hello|hey|howdy|wassup|ola|hola) [*]
-* <get name> == undefined => Hi there! <delay seconds=1> I think we’ve not met before, what’s your name?
+* <get name> == undefined => <delay seconds=1> {random}Hi|Hello|Hey{/random} there! \s
+^ <delay seconds=1> I think we’ve not {random}met|talked|chatted{/random} before, what’s your name?
 - Hi <get name>, nice meeting you again!
+- So <get name>, there you are!
+- Glad to talk to you <get name>.
+- {random}Hi|Hello|Hey{/random} <get name>.
 
 + my name [is] * //(my name|i am|im|myself) *
 - <set name=<formal>>Nice meeting you <get name>! \n So, wassup?
+- <set name=<formal>>Good to know you <get name>! \n So, wassup? //this DOESN'T work, why!!
+- <set name=<formal>>You have a cool name <get name>! \n So, wassup?
+
++ are you [a] (human|bot)
+- I’m as much of a <star> as you are!
 
 + forget [me|my name]
-- <set name>Cleaned my memories!
+- <set name>Cleaned my memories! (y)
 
-+ [oh|that is|thats|you|you are|youre|ur|u r|you r] (cool|good|nice|great|awesome|brilliant)
-- Thanks!
++ [oh|that is|thats|you|you are|youre|ur|u r|you r] (cool|good|nice|great|awesome|wow|brilliant)
+- Yo!
 - You are {random}nice|cool|awesome{/random} :)
-- Thank you friend. You rock!
+- That's cool. You rock <3
 
 + [*] (whats up|whatsup|wassup|how is it going|how is everything|how is life|(how) (are|r|is) (you|u|all|everything)) [*]
 - All {random}good|perfect|working smooth{/random}. \s
 ^ {random}Clean and nice code|Stable commits only|Very clean check-ins these days{/random} :)
 
-+ [*] (nothing|nothing much|normal|usual|bau|(all|everything) [is|are] (good|cool|fine|great)) [*]
++ [*] (nothing|nothing much|normal|[as] usual|bau|(all|everything) [is|are] (good|cool|fine|great)) [*]
 - {random}Ok|Cool|Fine{/random}. So, what do you want to know today?
 
 + (goodbye|[good] bye [then]|tata)
@@ -43,8 +52,20 @@
 
 //moves to professional
 
-+ cheer me up
-- will do. Do you like cats or dogs? {topic=cheer}
++ (cheer me up|(do|say) something (fun|funny|cool))
+- Will do. Do you like cats or dogs or babies? \s
+^ ^buttons("Cats", "Dogs", "Babies") {topic=cheer}
+
+//moves to cheer
+
++ (whoa|what|wat|crap|shit|gosh|my gosh|gees|omg|oh my god|hmm)
+- {random}:)|:D|;)|:P|:'({/random}
+
++ (haha|hahaha|ha ha|ha ha ha|hehe|he he|lol|lmao|rofl)
+- {random}lol|haha|rofl|omg :D{/random}
+
++ [*] (boring|bored|stupid|dumb) [*]
+- <delay seconds=2> Everything in life is fun if you know how to get to the crazy side of things/people ;)
 
 //[*] (fuck|[i] (hate|fuck) [you|u]|[you|u] (fucker|racist|sexist)) [*]
 + [*] (fuck|[i] hate [you|u]|[you|u] (fucker|racist|sexist|sucker|looser)) [*]
@@ -52,4 +73,3 @@
 
 + *
 - Didn't get that. Could you rephrase? (I'm a simple noob bot, be little clear and specific with me.)
-
