@@ -13,15 +13,16 @@
 - You are {random}nice|cool|awesome{/random} :)
 - Thank you friend. You rock!
 
-+ [*] (whats up|whatsup|wassup|how is it going|how is everything|how is life) [*]
-- All good. Clean and nice code.
++ [*] (whats up|whatsup|wassup|how is it going|how is everything|how is life|(how) (are|r|is) (you|u|all|everything)) [*]
+- All {random}good|perfect|working smooth{/random}. \s
+^ {random}Clean and nice code|Stable commits only|Very clean check-ins these days{/random} :)
 
 + [*] (nothing|nothing much|normal|usual|bau|(all|everything) [is|are] (good|cool|fine|great)) [*]
 - {random}Ok|Cool|Fine{/random}. So, what do you want to know today?
 
 + (goodbye|[good] bye [then]|tata)
-- leaving so soon?
-- Okay! \n See ya
+- Leaving so soon?
+- Okay! \n See ya.
 - Bye. Good day :)
 
 + [and|so] (who (are|r) (you|u)|(whats|what is) (your|ur) name|you (are|r))
@@ -35,8 +36,8 @@
 ^ <delay seconds=1> I talk about basic career info. So, what do you want to know? \s
 ^ ^buttons("Experience", "Background", "Skillset") {topic=professional}
 
-+ [*] tell [*] about (you|u|yourself|urself) [*]
-- Sure. \s
++ [*] ((tell|say|talk) [*] more|((about|more about) [you|u|yourself|urself])) [*]
+- {random}Sure|Yes|With pleasure{/random}. \s
 ^ <delay seconds=1> I talk about basic career info. So, what do you want to know? \s
 ^ ^buttons("Experience", "Background", "Skillset") {topic=professional}
 
