@@ -1,0 +1,16 @@
++ (skillset|skill set|skill|skills|technology|tech stack|technology stack)
+- <delay seconds=2>Product development, full-stack web development with .Net, C#, JavaScript, SQL etc. \s
+^ <delay seconds=2> Application design & architecture, Web, REST, Scrum, automation
+
++ [*] (background|education|qualification|qualifications) [*]
+- <delay seconds=1> Bachelor's degree in Electronics & Communiction Engineering
+
++ [*] experience [*]
+- <delay seconds=2> 9+ years of experience in professional software development. \s
+^ <delay seconds=2> Have worked in product development & service provider setups. \s
+^ <delay seconds=2> Domain knowledge includes e-commerce, telecom, healthcare & insurance.
+
++ [full|professional|career] (profile|resume|cv|curriculum vitae)
+- <delay seconds=1> See the profile in ^link(https://in.linkedin.com/in/arghyac, LinkedIn) \s
+^ <delay seconds=2> If you are interested, have a look at the the ^link(http://stackoverflow.com/users/2563833/arghya-c, StackOverflow) profile \s
+^ <delay seconds=2> Or check out the ^link(https://github.com/chakrabar, Github repo) maybe?
