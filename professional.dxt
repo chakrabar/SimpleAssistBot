@@ -1,5 +1,5 @@
 + (skillset|skill set|skill|skills|technology|tech stack|technology stack)
-- <delay seconds=2>Product development, full-stack web development with .Net, C#, JavaScript, SQL etc. \s
+- <delay seconds=2> Product development, full-stack web development with .Net, C#, JavaScript, SQL etc. \s
 ^ <delay seconds=2> Application design & architecture, Web, REST, Scrum, automation
 
 + [*] (background|education|qualification|qualifications) [*]
