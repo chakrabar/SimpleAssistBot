@@ -1,0 +1,5 @@
++ cats
+- ^image("https://media.giphy.com/media/Ejf2QdsB7RKvu/giphy.gif")
+
++ dogs
+- ^image("https://media.giphy.com/media/N2U7cpQvm0G5y/giphy.gif")
