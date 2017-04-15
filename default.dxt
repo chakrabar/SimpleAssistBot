@@ -1,12 +1,23 @@
 + [*] (hi|hello|hey|howdy|wassup|ola|hola) [*]
-* <get name> == undefined => Hi there! I don’t believe we’ve met before, what’s your name?
+* <get name> == undefined => Hi there! <delay seconds=1> I think we’ve not met before, what’s your name?
 - Hi <get name>, nice meeting you again!
 
 + my name [is] * //(my name|i am|im|myself) *
-- <set name=<formal>>Nice meeting you! \n So, wassup?
+- <set name=<formal>>Nice meeting you <get name>! \n So, wassup?
 
 + forget [me|my name]
 - <set name>Cleaned my memories!
+
++ [oh|that is|thats|you|you are|youre|ur|u r|you r] (cool|good|nice|great|awesome|brilliant)
+- Thanks!
+- You are {random}nice|cool|awesome{/random} :)
+- Thank you friend. You rock!
+
++ [*] (whats up|whatsup|wassup|how is it going|how is everything|how is life) [*]
+- All good. Clean and nice code.
+
++ [*] (nothing|nothing much|normal|usual|bau|(all|everything) [is|are] (good|cool|fine|great)) [*]
+- {random}Ok|Cool|Fine{/random}. So, what do you want to know today?
 
 + (goodbye|[good] bye [then]|tata)
 - leaving so soon?
@@ -14,29 +25,22 @@
 - Bye. Good day :)
 
 + [and|so] (who (are|r) (you|u)|(whats|what is) (your|ur) name|you (are|r))
-- I am AC :)
-- My name is AC _/\_
-- You can call me AC!
-- My friends call me AC
+- I am AC, I'm the online version of Arghya C :)
+- I'm the online version of Arghya C, my name is AC _/\_
+- I'm the online version of Arghya C, you can call me AC!
+- My friends call me AC, I'm the online version of Arghya C!
 
-+ [so] what [do] (you|u) do
-- I help my creator Mr. Arghya Chakrabarty! \s
-^ <delay seconds=1> What you want to know about him? \s
-^ ^buttons("Experience", "Background", "Skillset")
++ [so] what [do|does] (you|u|he|arghya) do
+- I fill in for Arghya C, when he is actually offline... \s
+^ <delay seconds=1> I talk about basic career info. So, what do you want to know? \s
+^ ^buttons("Experience", "Background", "Skillset") {topic=professional}
 
-+ (skillset|skill set|skill|skills|technology|tech stack|technology stack)
-- <delay seconds=2>Product development, full-stack web development with .Net, C#, JavaScript, SQL etc. \s
-^ <delay seconds=2> Application design & architecture, Web, REST, Scrum, automation
++ [*] tell [*] about (you|u|yourself|urself) [*]
+- Sure. \s
+^ <delay seconds=1> I talk about basic career info. So, what do you want to know? \s
+^ ^buttons("Experience", "Background", "Skillset") {topic=professional}
 
-+ [*] (background|education|qualification|qualifications) [*]
-- <delay seconds=1> Bachelor's degree in Electronics & Communiction Engineering
-
-+ [*] experience [*]
-- <delay seconds=2> 9+ years of experience in professional software development. \s
-^ <delay seconds=2> Have worked in product development & service provider setups. \s
-^ <delay seconds=2> Domain knowledge includes e-commerce, telecom, healthcare & insurance.
-
-+ [full|professional|career] (profile|resume|cv|curriculum vitae)
+//moves to professional
 
 + cheer me up
 - will do. Do you like cats or dogs? {topic=cheer}
@@ -46,4 +50,5 @@
 - <noreply>
 
 + *
-- Didn't get that. Could you rephrase?
+- Didn't get that. Could you rephrase? (I'm a simple noob bot, be little clear and specific with me.)
+
