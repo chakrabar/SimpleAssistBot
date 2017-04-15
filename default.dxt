@@ -1,0 +1,49 @@
++ [*] (hi|hello|hey|howdy|wassup|ola|hola) [*]
+* <get name> == undefined => Hi there! I don’t believe we’ve met before, what’s your name?
+- Hi <get name>, nice meeting you again!
+
++ my name [is] * //(my name|i am|im|myself) *
+- <set name=<formal>>Nice meeting you! \n So, wassup?
+
++ forget [me|my name]
+- <set name>Cleaned my memories!
+
++ (goodbye|[good] bye [then]|tata)
+- leaving so soon?
+- Okay! \n See ya
+- Bye. Good day :)
+
++ [and|so] (who (are|r) (you|u)|(whats|what is) (your|ur) name|you (are|r))
+- I am AC :)
+- My name is AC _/\_
+- You can call me AC!
+- My friends call me AC
+
++ [so] what [do] (you|u) do
+- I help my creator Mr. Arghya Chakrabarty! \s
+^ <delay seconds=1> What you want to know about him? \s
+^ ^buttons("Experience", "Background", "Skillset")
+
++ (skillset|skill set|skill|skills|technology|tech stack|technology stack)
+- <delay seconds=2>Product development, full-stack web development with .Net, C#, JavaScript, SQL etc. \s
+^ <delay seconds=2> Application design & architecture, Web, REST, Scrum, automation
+
++ [*] (background|education|qualification|qualifications) [*]
+- <delay seconds=1> Bachelor's degree in Electronics & Communiction Engineering
+
++ [*] experience [*]
+- <delay seconds=2> 9+ years of experience in professional software development. \s
+^ <delay seconds=2> Have worked in product development & service provider setups. \s
+^ <delay seconds=2> Domain knowledge includes e-commerce, telecom, healthcare & insurance.
+
++ [full|professional|career] (profile|resume|cv|curriculum vitae)
+
++ cheer me up
+- will do. Do you like cats or dogs? {topic=cheer}
+
+//[*] (fuck|[i] (hate|fuck) [you|u]|[you|u] (fucker|racist|sexist)) [*]
++ [*] (fuck|[i] hate [you|u]|[you|u] (fucker|racist|sexist|sucker|looser)) [*]
+- <noreply>
+
++ *
+- Didn't get that. Could you rephrase?
