@@ -13,6 +13,12 @@
 - Glad to talk to you <get name>. {weight=2}
 - {random}Hi|Hello|Hey{/random} <get name>. {weight=3}
 
++ (man|buddy|mate|friend|bro|dude|sis|boy|girl)
+- Yes <star>
+
++ (bot|robot|acman|ac man|acbot|ac bot|computer|machine)
+- Yes Hooman!
+
 + (my name is|i am|im|myself|[*] call me) * //my name [is] *
 - <set name=<star2>>Nice meeting you <get name>! \n So, wassup?
 - <set name=<star2>>Good to know you <get name>! \n So, wassup? //this DOESN'T work, why!!
