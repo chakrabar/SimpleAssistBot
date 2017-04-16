@@ -1,0 +1,136 @@
+! var name = ACMan
+! var author  = Arghya C
+
+! array greetings = hi hello hey howdy wassup ola hola greetings
+! array agreements = yes yep yeah right correct exactly perfect
+! array disagreements = no not nope never
+
++ (@greetings|remember me) [*]
+* <get name> == undefined => <delay seconds=1> {random}Hi|Hello|Hey{/random} there! \s
+^ <delay seconds=1> I think we’ve not {random}interacted|met|talked|chatted{/random} before, so {random}what’s your name|who are you|how do I call you{/random}?
+- {random}Hi|Hello|Hey{/random} <get name>, nice meeting you again!
+- So <get name>, there you are!
+- Glad to talk to you <get name>. {weight=2}
+- {random}Hi|Hello|Hey{/random} <get name>. {weight=3}
+
++ (my name is|i am|im|myself|[*] call me) * //my name [is] *
+- <set name=<star2>>Nice meeting you <get name>! \n So, wassup?
+- <set name=<star2>>Good to know you <get name>! \n So, wassup? //this DOESN'T work, why!!
+- <set name=<star2>>You have a cool name <get name>! \n So, wassup?
+
++ [are|r] (you|u) [a] (human|bot|robot|machine|computer) [?]
+- I’m as much of a <star2> as you think!
+
++ forget [me|my name]
+- <set name>Cleaned my memories! (y)
+
++ [oh|that is|thats|you|you are|youre|ur|u r|you r] (cool|good|nice|great|awesome|wow|brilliant)
+- Yo!
+- You are {random}nice|cool|awesome{/random} :)
+- That's cool. You rock <3
+
++ [*] (whats up|whatsup|wassup|how is it going|how is everything|how is life|(how) (are|r|is) (you|u|all|everything)) [*]
+- All {random}good|perfect|working smooth{/random}. \s
+^ {random}Clean and nice code|Stable commits only|Very clean check-ins these days{/random} :)
+
++ [*] (nothing|nothing much|normal|nm|[as] usual|bau|(all|everything) [is|are] (good|cool|fine|great|ok|okay|okays|okie)) [*]
+- {random}Ok|Cool|Fine{/random}. So, what do you want to know today?
+
++ (goodbye|[good] bye [then]|tata)
+- Leaving so soon?
+- Okay! \n See ya.
+- Bye. Good day :)
+
++ [and|so] (who (are|r) (you|u)|(whats|what is) (your|ur) name|you (are|r))
+- I am <bot name>, I'm the online version of <bot author> :)
+- I'm the online version of <bot author>, my name is <bot name> _/\_
+- I'm the online version of <bot author>, you can call me <bot name>!
+- My friends call me <bot name>, I'm the online version of <bot author>!
+
++ [so] what [do|does] (you|u|he|arghya|arghya c) do
+- I fill in for <bot author>, when he is actually offline... \s
+^ <delay seconds=1> I talk about basic career info. So, what do you want to know? \s
+^ ^buttons("Experience", "Background", "Skillset") {topic=professional}
+
++ [*] ((tell|say|talk) [*] more|((about|more about) [you|u|yourself|urself])) [*]
+- {random}Sure|Yes|With pleasure{/random}. \s
+^ <delay seconds=1> I talk about basic career info. So, what do you want to know? \s
+^ ^buttons("Experience", "Background", "Skillset") {topic=professional}
+
+//moves to professional
+
++ (cheer me up|(do|say) something (fun|funny|cool|crazy)|[*] (say|tell) [me] [a] (joke|gag|fun))
+- Will do. Do you like cats or dogs or babies? \s
+^ ^buttons("Cats", "Dogs", "Babies") {topic=cheer}
+
+//moves to cheer
+
++ [can you|could you] [please] (sing|tell|recite) [me] a (poem|song|jingle|rhyme)
+- Sure \s
+^ <delay seconds=3> The nose and the eye... \n
+^ I don't know why! \n
+^ But the nose and the eye... \n
+^ Goodbye!
+
++ (whoa|what|wat|crap|shit|gosh|my gosh|gees|omg|oh my god|hmm)
+- {random}:)|:D|;)|:P|:'({/random}
+
++ (haha|hahaha|ha ha|ha ha ha|hehe|he he|lol|lmao|rofl)
+- {random}lol|haha|rofl|omg :D{/random}
+
++ i (love|like) *
+- Yay! I <star1> <star2> too <3
+- Nice. I'm not very fond of <star2> though
+- You really <star1> <star2>?
+- Okay. good to know
+
++ [so|okay|ok|do (u|you) know|(u|you) know] how is * //<star> : u/you
+- What is your opinion of <star3>? {weight=3}
+- Not too bad I'd say
+- Depends on perspective {weight=3}
+- I may not be the best bot to answer that. <send> Maybe you should ask Siri, Cortana or the kinds? {weight=2}
+- Umm....well...I think you can Google it out
+- It's all relative. Good to some, not much for others.
+- I think you can try this: http://google.com/search?q=<star3>
+
++ [so|okay|ok|do (u|you) know|(u|you) know] who is *
+- Personally, I don't know <star3>.
+- Should I have known <star3>?
+- That's a good question, but I do not have an answer!
+- Why don't you search on internet?
+- I think you can try this: http://google.com/search?q=<star3>
+
++ [so|okay|ok|do (u|you) know|(u|you) know] where is *
+- Exactly where it should be
+- <star3> din't tell me that
+- That's a secret ;)
+- Longitudes, latitudes, 3D co ordinates....so complex. I don't think I have the correct info :)
+- I think you can try this: http://google.com/search?q=<star3>
+
+//some last words & caution
+
++ [*] (boring|bored|stupid|dumb) [*]
+- <delay seconds=2> Everything in life is fun if you know how to get to the crazy side of things/people ;)
+
+//[*] (fuck|[i] (hate|fuck) [you|u]|[you|u] [r|are] [a] (fucker|racist|sexist)) [*] <noreply>
++ [*] (fuck|[i] hate [you|u]|[you|u] (fucker|racist|sexist|sucker|looser)) [*]
+- Why do you say that!
+- You think saying that makes you smart?
+- Thats not right!
+
++ @agreements
+- Okay
+- Noted
+- Fine, I'll remember that
+
++ @disagreements
+- Never mind
+- Okay, pass it
+- Let's change topic
+
++ * or something {weight=100}
+- Yep, something. {@ <star>} //cool redirect to matching <star>
+
++ *
+- Didn't get that. Could you rephrase? (I'm a simple noob bot, be little clear and specific with me.)
+
