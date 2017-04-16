@@ -2,8 +2,8 @@
 ! var author  = Arghya C
 
 ! array greetings = hi hello hey howdy wassup ola hola greetings
-! array agreements = yes yep yeah right correct exactly perfect
-! array disagreements = no not nope never
+! array agreements = yes yep yeah ya yea right correct exactly perfect
+! array disagreements = no not nope never nah ney na
 
 + (@greetings|remember me) [*]
 * <get name> == undefined => <delay seconds=1> {random}Hi|Hello|Hey{/random} there! \s
