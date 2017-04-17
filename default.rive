@@ -95,8 +95,8 @@
 - I think you can try this: ^link("http://google.com/search?q=<star3>", "Google") 
 
 + [so|okay|ok|do (u|you) know|(u|you) know] who is *
-- Personally, I don't know <formal3>.
-- Should I have known <formal3>?
+- Personally, I don't know {formal}<star3>{/formal}.
+- Should I have known {formal}<star3>{/formal}?
 - That's a good question, but I do not have an answer!
 - Why don't you search on internet?
 - I think you can try this: ^link("http://google.com/search?q=<star3>", "Google") 
