@@ -70,7 +70,7 @@
 - Makes sense, kind of
 - I assumed you'd think that way
 
-+ (whoa|what|wat|crap|shit|gosh|my gosh|gees|omg|oh my god|hmm)
++ (whoa|what|wat|crap|shit|gosh|my gosh|gees|omg|oh my god|hmm) {weight=20}
 - {random}:)|:D|;)|:P|:'({/random}
 
 + (haha|hahaha|ha ha|ha ha ha|hehe|he he|lol|lmao|rofl|funny)
@@ -148,7 +148,7 @@
 - I know ghosts are not real. \n I'm also not real. But, still I am talking to you... {weight=2}
 - Ghosts don't seem very logical at this time. But science & technology still cannot explain lot of things. A lot... {weight=2}
 
-+ [*] god [*]
++ [*] god [*] {weight=10}
 - God is there for the believers
 - God is as real as we make him/her
 - God or almighty, if you think really deep, is another name of nature
