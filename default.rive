@@ -1,9 +1,14 @@
 ! var name = ACMan
 ! var author  = Arghya C
+! var email = codenfood@outlook.com
 
 ! array greetings = hi hello hey howdy wassup ola hola greetings
 ! array agreements = yes yep yeah ya yea right correct exactly perfect
 ! array disagreements = no not nope never nah ney na
+! array positives = cool good nice great awesome wow brilliant
+! array negatives = bad|too bad|not good|pathetic|crap|shit|nonsense|poor
+
+//--------------------- CONVERSATION STARTER --------------------------------
 
 + (@greetings|remember me) [*]
 * <get name> == undefined => <delay seconds=1> {random}Hi|Hello|Hey{/random} there! \s
@@ -20,20 +25,140 @@
 - Yes Hooman!
 
 + (my name is|i am|im|myself|[*] call me) * //my name [is] *
-- <set name=<star2>>Nice meeting you <get name>! \n So, wassup?
-- <set name=<star2>>Good to know you <get name>! \n So, wassup? //this DOESN'T work, why!!
-- <set name=<star2>>You have a cool name <get name>! \n So, wassup?
+- <set name={formal}<star2>{/formal}>Nice meeting you <get name>! \n So, wassup?
+- <set name={formal}<star2>{/formal}>Good to know you <get name>! \n So, wassup? //{formal}<get name>{/formal} DOESN'T work!
+- <set name={formal}<star2>{/formal}>You have a cool name <get name>! \n So, wassup?
 
-+ [are|r] (you|u) [a] (human|bot|robot|machine|computer) [?]
++ [are|r] (you|u) [a] (human|bot|robot|machine|computer)
 - I’m as much of a <star2> as you think!
 
-+ forget [me|my name]
-- <set name>Cleaned my memories! (y)
++ [*] (goodbye|[good] bye [then]|tata)
+- Leaving so soon?
+- Okay! \n See ya.
+- Bye. Good day :)
 
-+ [oh|that is|thats|you|you are|youre|ur|u r|you r] (cool|good|nice|great|awesome|wow|brilliant)
++ [*] (thank you|thank u|thanks) [*]
+- Oh, you are welcome!
+- You are always welcome
+- Never mention
+- Pleasure's all mine
+
+//------------------------ GENERIC RESPONSES ---------------------------------
+
++ [*] [its|it is|that is|thats|hmm|kinda|kind of] (@positives)
+- Hmm...okay
+- Even I think it's <star>
+- <star> indeed
+- Yeah...it's <star>
+- Why would you think it's <star> {weight=2}
+- Why so? {weight=2}
+- What makes you say that? {weight=2}
+
++ [*] [its|it is|that is|thats|hmm|kinda|kind of] (@negatives)
+- Hmm...you think so!
+- Maybe it's actually <star>
+- <star> not my opinion exactly, but that's okay
+- Why would you think it's <star> {weight=2}
+- Why so? {weight=2}
+- What makes you say that? {weight=2}
+
++ *
+% (why would you think its *|why so|what makes you say that)
+- Okay, understood
+- Got it
+- Makes sense, kind of
+- I assumed you'd think that way
+
++ (whoa|what|wat|crap|shit|gosh|my gosh|gees|omg|oh my god|hmm)
+- {random}:)|:D|;)|:P|:'({/random}
+
++ (haha|hahaha|ha ha|ha ha ha|hehe|he he|lol|lmao|rofl|funny)
+- {random}lol|haha|rofl|omg that's funny :D{/random}
+
++ i (love|like) (you|u) {weight=20}
+- Thanks! You are {random}awesome|cool|fun|sweet|cute|my fav{/random}.
+
++ i (love|like) *
+- Yay! I <star1> <star2> too <3
+- Nice. I'm not very fond of <star2> though
+- You really <star1> <star2>?
+- Okay. good to know
+- I kind of guessed that you'd <star1> <star2>
+
++ [so|okay|ok|do (u|you) know|(u|you) know] how is * //<star> : u/you - alternatives match, optionals don't
+- What is your opinion of <star3>? {weight=3}
+- Not too bad I'd say
+- Depends on perspective {weight=3}
+- I may not be the best bot to answer that. <send> Maybe you should ask Siri, Cortana or the kinds? {weight=2}
+- Umm....well...I think you can Google it out
+- It's all relative. Good to some, not much for others.
+- I think you can try this: ^link(http://google.com/search?q=<star3>, Google) 
+
++ [so|okay|ok|do (u|you) know|(u|you) know] who is *
+- Personally, I don't know <formal3>.
+- Should I have known <formal3>?
+- That's a good question, but I do not have an answer!
+- Why don't you search on internet?
+- I think you can try this: ^link(http://google.com/search?q=<star3>, Google) 
+
++ [so|okay|ok|do (u|you) know|(u|you) know] where is *
+- Exactly where it should be
+- <star3> din't tell me that
+- That's a secret ;)
+- Longitudes, latitudes, 3D co ordinates....so complex. I don't think I have the correct info :)
+- I think you can try this: ^link(http://google.com/search?q=<star3>, Google) 
+
+//+ [*] (what is|whats|what) [*] (((you|u) think)|((ur|your) (opinion|idea|view|think))) [of|on|about] * // >> this is getting too complicated
+// so breaking into two pieces and repeating myself :(
+
++ [*] (whats|what) [*] (your|ur) [*] (opinion|opinions|idea|ideas|view|views|though|thoughts) [of|on|about] *
+- My <star3> is not important here, because it is not very {random}important|interesting|exciting{/random} for me
+- Honestly, I do not have a {random}great|fine|real{/random} <star3> of it. 
+- I'm yet form any <star3>. Search it online, maybe?
+- You can get a better <star3> here: ^link(http://google.com/search?q=<star4>, Google) 
+
++ [*] (you|u) [*] (think|feel) [of|on|about] *
+- Honestly, I didn't <star2> anything. I'll do that later maybe {weight=3}
+- I really don't <star2> about those things. Really {weight=2}
+- Not sure. I'll give it a pass {weight=2}
+- You can get a better opinion here: ^link(http://google.com/search?q=<star3>, Google) {weight=3}
+- I'd say, I <star2> positive of it
+- I don't feel very positive about it these days. But my feelings might change...
+
+//---------------------- ABSTRACTS TOPICS --------------------------
+
++ [*] what [*] is [*] life [*]
+- Life is a continuous sinusoidal wave of experiences & feelings
+- Life is what we feel with continuous conscious curiosity
+- Life is the noise between birth & death
+- Life is the time spend by mortals in material form
+- Life is the greatest thing experienced by those who can feel, understand and react
+
++ [*] (is|was) [*] (deep|phylosophical|complex|weird|odd) [*]
+- You think that was <star2>? It was, if you think so
+- Indeed that was <star2>!
+- It was more of fact I'd say
+
++ [*] ghost [*]
+- Ghosts are as real as we make them
+- Ghosts are real, I know
+- Do you believe in ghosts? Don't look behind you by the way... {weight=2}
+- I'm not sure. But many people think ghosts do exist. I'll go with majority I guess 
+- I know ghosts are not real. \n I'm also not real. But, still I am talking to you... {weight=2}
+- Ghosts don't seem very logical at this time. But science & technology still cannot explain lot of things. A lot... {weight=2}
+
++ [*] god [*]
+- God is there for the believers
+- God is as real as we make him/her
+- God or almighty, if you think really deep, is another name of nature
+- About god, we are yet to understand more
+
+//---------------------- SMALL TALKS ----------------------------
+
++ [you|you are|youre|ur|u r|you r|(arghya|arghya c|arghyac) is] (@positives)
 - Yo!
 - You are {random}nice|cool|awesome{/random} :)
-- That's cool. You rock <3
+- Thanks! You rock <3
 
 + [*] (whats up|whatsup|wassup|how is it going|how is everything|how is life|(how) (are|r|is) (you|u|all|everything)) [*]
 - All {random}good|perfect|working smooth{/random}. \s
@@ -42,10 +167,20 @@
 + [*] (nothing|nothing much|normal|nm|[as] usual|bau|(all|everything) [is|are] (good|cool|fine|great|ok|okay|okays|okie)) [*]
 - {random}Ok|Cool|Fine{/random}. So, what do you want to know today?
 
-+ (goodbye|[good] bye [then]|tata)
-- Leaving so soon?
-- Okay! \n See ya.
-- Bye. Good day :)
+//----------------------- INFO & BUSINESS ---------------------------
+
++ [so] what [do|does] (you|u|he|arghya|arghyac|arghya c) (do)
+- I fill in for <bot author>, when he is actually offline... \s
+^ <delay seconds=1> I talk about normal stuffs, and about <bot author>'s basic info. So, what do you want to know? \s
+^ ^buttons("Experience", "Background", "Skillset") {topic=professional}
+
++ [*] ([tell|say|talk] [*] (more|about|more about) (you|u|yourself|urself|him|arghya|arghyac|arghya c)) [*]
+- {random}Sure|Yes sure|With pleasure{/random}. \s
+^ <delay seconds=1> I & <bot author> work together to have better engagements with our friends like you. I talk to people abou normal stuffs, \s
+^ and about <bot author>'s basic info. I try to learn more as I chat. So, what do you want to know? \s
+^ ^buttons("Experience", "Background", "Skillset") {topic=professional}
+
+// >> moves to professional
 
 + [and|so] (who (are|r) (you|u)|(whats|what is) (your|ur) name|you (are|r))
 - I am <bot name>, I'm the online version of <bot author> :)
@@ -53,90 +188,58 @@
 - I'm the online version of <bot author>, you can call me <bot name>!
 - My friends call me <bot name>, I'm the online version of <bot author>!
 
-+ [so] what [do|does] (you|u|he|arghya|arghya c) do
-- I fill in for <bot author>, when he is actually offline... \s
-^ <delay seconds=1> I talk about basic career info. So, what do you want to know? \s
-^ ^buttons("Experience", "Background", "Skillset") {topic=professional}
+//--------------------------- ENTERTAINMENT ---------------------------
 
-+ [*] ((tell|say|talk) [*] more|((about|more about) [you|u|yourself|urself])) [*]
-- {random}Sure|Yes|With pleasure{/random}. \s
-^ <delay seconds=1> I talk about basic career info. So, what do you want to know? \s
-^ ^buttons("Experience", "Background", "Skillset") {topic=professional}
-
-//moves to professional
-
-+ (cheer me up|(do|say) something (fun|funny|cool|crazy)|[*] (say|tell) [me] [a] (joke|gag|fun))
-- Will do. Do you like cats or dogs or babies? \s
++ [*] (cheer me up|(do|say) something (fun|funny|cool|crazy)|(say|tell) [me] [a] (joke|gag|fun))
+- Let me show you something funny. Do you like cats or dogs or babies? \s
 ^ ^buttons("Cats", "Dogs", "Babies") {topic=cheer}
 
-//moves to cheer
++ [*] (boring|bored|stupid|dumb) [*] {weight=10}
+- <delay seconds=2> Everything in life is fun if you know how to get to the crazy side of things/people ;) \n
+^ Let me show you something funny! You want cats or dogs or babies? \n
+^ ^buttons("Cats", "Dogs", "Babies") {topic=cheer}
+
+// >> moves to cheer
 
 + [can you|could you] [please] (sing|tell|recite) [me] a (poem|song|jingle|rhyme)
 - Sure \s
 ^ <delay seconds=3> The nose and the eye... \n
 ^ I don't know why! \n
 ^ But the nose and the eye... \n
-^ Goodbye!
+^ Okay, goodbye! \n\n
+^ Did you like it?
 
-+ (whoa|what|wat|crap|shit|gosh|my gosh|gees|omg|oh my god|hmm)
-- {random}:)|:D|;)|:P|:'({/random}
-
-+ (haha|hahaha|ha ha|ha ha ha|hehe|he he|lol|lmao|rofl)
-- {random}lol|haha|rofl|omg :D{/random}
-
-+ i (love|like) *
-- Yay! I <star1> <star2> too <3
-- Nice. I'm not very fond of <star2> though
-- You really <star1> <star2>?
-- Okay. good to know
-
-+ [so|okay|ok|do (u|you) know|(u|you) know] how is * //<star> : u/you
-- What is your opinion of <star3>? {weight=3}
-- Not too bad I'd say
-- Depends on perspective {weight=3}
-- I may not be the best bot to answer that. <send> Maybe you should ask Siri, Cortana or the kinds? {weight=2}
-- Umm....well...I think you can Google it out
-- It's all relative. Good to some, not much for others.
-- I think you can try this: http://google.com/search?q=<star3>
-
-+ [so|okay|ok|do (u|you) know|(u|you) know] who is *
-- Personally, I don't know <star3>.
-- Should I have known <star3>?
-- That's a good question, but I do not have an answer!
-- Why don't you search on internet?
-- I think you can try this: http://google.com/search?q=<star3>
-
-+ [so|okay|ok|do (u|you) know|(u|you) know] where is *
-- Exactly where it should be
-- <star3> din't tell me that
-- That's a secret ;)
-- Longitudes, latitudes, 3D co ordinates....so complex. I don't think I have the correct info :)
-- I think you can try this: http://google.com/search?q=<star3>
-
-//some last words & caution
-
-+ [*] (boring|bored|stupid|dumb) [*]
-- <delay seconds=2> Everything in life is fun if you know how to get to the crazy side of things/people ;)
+//------------------------------ GENERIC FILLERS ----------------------------------
 
 //[*] (fuck|[i] (hate|fuck) [you|u]|[you|u] [r|are] [a] (fucker|racist|sexist)) [*] <noreply>
 + [*] (fuck|[i] hate [you|u]|[you|u] (fucker|racist|sexist|sucker|looser)) [*]
 - Why do you say that!
-- You think saying that makes you smart?
-- Thats not right!
+- You think saying that makes you smart? {weight=2}
+- That really doesn't make a reasonable conversation
+- Thats not right way to say things!
 
 + @agreements
 - Okay
 - Noted
 - Fine, I'll remember that
+- Sounds good to me
 
 + @disagreements
 - Never mind
 - Okay, pass it
 - Let's change topic
+- Fine, ignore it
 
 + * or something {weight=100}
 - Yep, something. {@ <star>} //cool redirect to matching <star>
 
-+ *
-- Didn't get that. Could you rephrase? (I'm a simple noob bot, be little clear and specific with me.)
++ forget [me|my name]
+- <set name>Cleaned my memories! (y) \n
+^ Let's talk about something else
 
++ *
+- Didn't get that. Could you rephrase?
+- Not sure I understood it well. Let's talk about something else?
+- Didn't get that. I'm a simple bot, be little clear and specific with me.
+- That wasn't clear to me. I understand only plain basic English, that too, old school!
+- Well I'm new and still learning. What you said is beyond my knowledge. Try something else.
