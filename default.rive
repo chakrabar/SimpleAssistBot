@@ -7,6 +7,7 @@
 ! array disagreements = no not nope never nah ney na
 ! array positives = cool good nice great awesome wow brilliant
 ! array negatives = bad|too bad|not good|pathetic|crap|shit|nonsense|poor
+! array feelings = happy sad angry bored excited annoyed frustrated sleepy tired exhausted hungry thirsty
 
 //--------------------- CONVERSATION STARTER --------------------------------
 
@@ -139,7 +140,7 @@
 - Indeed that was <star2>!
 - It was more of fact I'd say
 
-+ [*] ghost [*]
++ [*] (ghost|ghosts) [*]
 - Ghosts are as real as we make them
 - Ghosts are real, I know
 - Do you believe in ghosts? Don't look behind you by the way... {weight=2}
@@ -196,7 +197,7 @@
 
 + [*] (boring|bored|stupid|dumb) [*] {weight=10}
 - <delay seconds=2> Everything in life is fun if you know how to get to the crazy side of things/people ;) \n
-^ Let me show you something funny! You want cats or dogs or babies? \n
+^ Let me show you something funny! {random}You want cats or dogs or babies?|Choose|Take a pick{/random} \n
 ^ ^buttons("Cats", "Dogs", "Babies") {topic=cheer}
 
 // >> moves to cheer
@@ -208,6 +209,11 @@
 ^ But the nose and the eye... \n
 ^ Okay, goodbye! \n\n
 ^ Did you like it?
+- How about this? \n\nHappy birthday to you...\nHappy birthday tooooo youuuuu...\nHappy birthday happy birthday happy birthday\nto youuu.... \n
+^ <delay seconds=1> Not your birthday? Oops...ignore please
+-Here you go... \s
+^ <delay seconds=2> A B C D E F G H I J K L M N O P Q R S T U V W X Y Z ......\n\n I love you.... \s
+^ <delay seconds=1> Didn't get the rythm? You should watch more Bollywood....
 
 //------------------------------ GENERIC FILLERS ----------------------------------
 
