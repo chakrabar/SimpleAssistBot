@@ -92,21 +92,21 @@
 - I may not be the best bot to answer that. <send> Maybe you should ask Siri, Cortana or the kinds? {weight=2}
 - Umm....well...I think you can Google it out
 - It's all relative. Good to some, not much for others.
-- I think you can try this: ^link(http://google.com/search?q=<star3>, Google) 
+- I think you can try this: ^link("http://google.com/search?q=<star3>", "Google") 
 
 + [so|okay|ok|do (u|you) know|(u|you) know] who is *
 - Personally, I don't know <formal3>.
 - Should I have known <formal3>?
 - That's a good question, but I do not have an answer!
 - Why don't you search on internet?
-- I think you can try this: ^link(http://google.com/search?q=<star3>, Google) 
+- I think you can try this: ^link("http://google.com/search?q=<star3>", "Google") 
 
 + [so|okay|ok|do (u|you) know|(u|you) know] where is *
 - Exactly where it should be
 - <star3> din't tell me that
 - That's a secret ;)
 - Longitudes, latitudes, 3D co ordinates....so complex. I don't think I have the correct info :)
-- I think you can try this: ^link(http://google.com/search?q=<star3>, Google) 
+- I think you can try this: ^link("http://google.com/search?q=<star3>", "Google") 
 
 //+ [*] (what is|whats|what) [*] (((you|u) think)|((ur|your) (opinion|idea|view|think))) [of|on|about] * // >> this is getting too complicated
 // so breaking into two pieces and repeating myself :(
@@ -115,13 +115,13 @@
 - My <star3> is not important here, because it is not very {random}important|interesting|exciting{/random} for me
 - Honestly, I do not have a {random}great|fine|real{/random} <star3> of it. 
 - I'm yet form any <star3>. Search it online, maybe?
-- You can get a better <star3> here: ^link(http://google.com/search?q=<star4>, Google) 
+- You can get a better <star3> here: ^link("http://google.com/search?q=<star4>", "Google") 
 
 + [*] (you|u) [*] (think|feel) [of|on|about] *
 - Honestly, I didn't <star2> anything. I'll do that later maybe {weight=3}
 - I really don't <star2> about those things. Really {weight=2}
 - Not sure. I'll give it a pass {weight=2}
-- You can get a better opinion here: ^link(http://google.com/search?q=<star3>, Google) {weight=3}
+- You can get a better opinion here: ^link("http://google.com/search?q=<star3>", "Google") {weight=3}
 - I'd say, I <star2> positive of it
 - I don't feel very positive about it these days. But my feelings might change...
 
